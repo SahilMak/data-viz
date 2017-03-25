@@ -3,12 +3,14 @@
  */
 var domain = 'data.consumerfinance.gov';
 var setID = 'jhzv-w97w';
-var query = 'product=Student%20loan&$where=date_received%20between%20%272016-01-01T00:00:00%27%20and%20%272017-01-01T00:00:00%27'; // 2016
 var title = 'Number of Student Loan Complaints by Year';
 
 $(function () {
+    // Determine year
+    var year = parseInt($('#year').text());
+    console.log(year + 1);
     // SODA API call
-    $.getJSON('https://' + domain + '/resource/' + setID + '.json?$limit=10000&' + query, function (data) {
+    $.getJSON('https://' + domain + '/resource/' + setID + '.json?$limit=10000&product=Student%20loan&$where=date_received%20between%20%27' + year + '-01-01T00:00:00%27%20and%20%27' + (year + 1) + '-01-01T00:00:00%27', function (data) {
         // Create & initialize states array
         var states = [];
         for (var i = 0; i < 50; i++) {
