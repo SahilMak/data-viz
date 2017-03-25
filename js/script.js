@@ -171,5 +171,30 @@ $(function () {
             {"hc-key": "us-wy", "value": states[49]},
         ]
         // Construct map
+        $('#container').highcharts('Map', {
+            chart: {
+                borderWidth: 1,
+                type: 'map'
+            },
+            colorAxis: {
+                min: 0
+            },
+            mapNavigation: {
+                enabled: true,
+                buttonOptions: {
+                    verticalAlign: true
+                }
+            },
+            series: [{
+                animation: {
+                    duration: 1000
+                },
+                data: statesData,
+                mapData: Highcharts.maps['countries/us/us-all']
+            }],
+            title: {
+                text: title
+            }
+        });
     });
 });
