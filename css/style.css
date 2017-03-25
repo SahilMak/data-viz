@@ -1,4 +1,9 @@
+#top {
+    padding-top: 100px;
+}
+
 #container {
+    padding-top: 10px;
     width: 1600px;
     height: 900px;
     margin: 0 auto;
