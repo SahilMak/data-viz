@@ -190,7 +190,18 @@ $(function () {
                     duration: 1000
                 },
                 data: statesData,
-                mapData: Highcharts.maps['countries/us/us-all']
+                mapData: Highcharts.maps['countries/us/us-all'],
+                joinBy: 'hc-key',
+                name: 'Student loan complaints',
+                states: {
+                    hover: {
+                        color: '#3cc864'
+                    }
+                },
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
             }],
             title: {
                 text: title
