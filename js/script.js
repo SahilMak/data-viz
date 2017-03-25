@@ -3,11 +3,20 @@
  */
 var domain = 'data.consumerfinance.gov';
 var setID = 'jhzv-w97w';
-var query = 'product=Student%20loan&$where=date_received%20between%20%272016-01-01T00:00:00%27%20and%20%272017-01-01T00:00:00%27';
+var query = 'product=Student%20loan&$where=date_received%20between%20%272016-01-01T00:00:00%27%20and%20%272017-01-01T00:00:00%27'; // 2016
 var title = 'Number of Student Loan Complaints by Year';
 
 $(function () {
-    $.get('https://' + domain + '/resource/' + setID + '.json?' + query, function (data) {
-        console.log(data);
+    // SODA API call
+    $.getJSON('https://' + domain + '/resource/' + setID + '.json?' + query, function (data) {
+        // Create & initialize states array
+        var states = [];
+        states.fill(0);
+        // Gather states data
+        $.each(data, function (key, value) {
+            console.log(value.state);
+        });
+        // Create hc-key array using states data
+        // Construct map
     });
 });
