@@ -193,7 +193,7 @@ $(document).ready(function () {
                 },
                 series: [{
                     animation: {
-                        duration: 1000
+                        duration: 500
                     },
                     data: statesData,
                     mapData: Highcharts.maps['countries/us/us-all'],
