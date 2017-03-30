@@ -177,7 +177,7 @@ $(document).ready(function () {
                 {"hc-key": "us-wy", "value": states[49]}
             ];
             // Construct map
-            $('#container').highcharts('Map', {
+            $("#container").highcharts('Map', {
                 chart: {
                     borderWidth: 1,
                     type: 'map'
@@ -189,7 +189,9 @@ $(document).ready(function () {
                 mapNavigation: {
                     enabled: true,
                     buttonOptions: {
-                        verticalAlign: true
+                        height: 20,
+                        verticalAlign: true,
+                        width: 20
                     }
                 },
                 series: [{
